@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Engine\ThirdParty\tinyxml2.cpp" />
+    <ClCompile Include="Engine\Private\Actors\Actor.cpp" />
+    <ClCompile Include="Engine\Private\Actors\ActorFactory.cpp" />
+    <ClCompile Include="Game\Private\GameLogic.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="Game\Resources\Ball.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Engine\ThirdParty\tinyxml2.h" />
+    <ClInclude Include="Engine\Public\Actors\Actor.h" />
+    <ClInclude Include="Engine\Public\Actors\ActorFactory.h" />
+    <ClInclude Include="Engine\Public\Actors\AbstractActorComponent.h" />
+    <ClInclude Include="Engine\Public\Actors\ActorTypes.h" />
+    <ClInclude Include="Game\Public\GameLogic.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Game\Resources\Ball.json" />
+  </ItemGroup>
+</Project>
