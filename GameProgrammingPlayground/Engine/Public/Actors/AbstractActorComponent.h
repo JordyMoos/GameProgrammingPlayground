@@ -1,12 +1,12 @@
 #pragma once
 
 #include <memory>
+#include "../../ThirdParty/tinyxml2.h"
 #include "ActorTypes.h"
 #include "Actor.h"
 #include "ActorFactory.h"
 
 
-class XMLDocument;
 class AbstractActorComponent;
 
 
@@ -28,7 +28,7 @@ public:
 	}
 
 
-	virtual bool VInit(XMLDocument *data) = 0;
+	virtual bool VInit(tinyxml2::XMLDocument *data) = 0;
 	virtual void VPostInit() { }
 	virtual void VUpdate(int deltaMs) { }
 	// Used for actor modification via xml

@@ -79,13 +79,16 @@
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Xml Include="Game\Resources\Ball.xml" />
+    <Xml Include="Game\Resources\Ball.xml">
+      <SubType>Designer</SubType>
+    </Xml>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Public\Actors\AbstractActorComponent.h" />
     <ClInclude Include="Engine\Public\Actors\Actor.h" />
     <ClInclude Include="Engine\Public\Actors\ActorFactory.h" />
     <ClInclude Include="Engine\Public\Actors\ActorTypes.h" />
+    <ClInclude Include="Engine\Public\Actors\TransformComponent.h" />
     <ClInclude Include="Engine\ThirdParty\tinyxml2.h" />
     <ClInclude Include="Game\Public\GameLogic.h" />
   </ItemGroup>

@@ -8,6 +8,7 @@
 
 
 class ActorFactory;
+class XMLDocument;
 
 
 class Actor
@@ -15,10 +16,14 @@ class Actor
 private:
 	friend class ActorFactory;
 
+
 public:
 	typedef std::map<ComponentId, StrongActorComponentPtr> ActorComponents;
 
+
+private:
 	ActorId id;
+	ActorComponents components;
 
 
 public:
@@ -26,8 +31,14 @@ public:
 	{
 	}
 
-	~Actor() {};
+	~Actor()
+	{
+		components.clear();
+	};
 
+	bool Init(XMLDocument* data);
+	void PostInit();
+	void Update(int deltaMs);
 
 private:
 	Actor() {};

@@ -17,6 +17,7 @@
     <ClInclude Include="Engine\Public\Actors\AbstractActorComponent.h" />
     <ClInclude Include="Engine\Public\Actors\ActorTypes.h" />
     <ClInclude Include="Game\Public\GameLogic.h" />
+    <ClInclude Include="Engine\Public\Actors\TransformComponent.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Game\Resources\Ball.json" />
