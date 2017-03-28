@@ -1,5 +1,6 @@
 #pragma once
 
+#include <map>
 #include "../../ThirdParty/tinyxml2.h"
 #include "ActorTypes.h"
 
@@ -10,7 +11,7 @@ private:
 	ActorId lastActorId;
 
 protected:
-
+	
 
 public:
 	ActorFactory();

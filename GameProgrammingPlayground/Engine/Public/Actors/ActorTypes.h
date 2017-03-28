@@ -1,6 +1,7 @@
 #pragma once
 
 #include <memory>
+#include <unordered_map>
 
 
 class Actor;
@@ -15,6 +16,9 @@ typedef std::weak_ptr<Actor> WeakActorPtr;
 typedef unsigned int ComponentId;
 typedef std::shared_ptr<AbstractActorComponent> StrongActorComponentPtr;
 typedef std::weak_ptr<AbstractActorComponent> WeakActorComponentPtr;
+
+
+typedef std::unordered_map<ComponentId, void()
 
 
 const ActorId INVALID_ACTOR_ID = 0;

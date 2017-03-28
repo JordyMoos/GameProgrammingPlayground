@@ -28,6 +28,8 @@ public:
 	// Used for actor modification via xml
 	//virtual void VOnChange() { }
 
+	virtual const char* VGetName() const = 0;
+
 private:
 	void SetOwner(StrongActorPtr owner)
 	{
