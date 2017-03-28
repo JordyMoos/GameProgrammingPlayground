@@ -1,9 +1,7 @@
 #pragma once
 
+#include "../../ThirdParty/tinyxml2.h"
 #include "ActorTypes.h"
-
-
-class XMLDocument;
 
 
 class ActorFactory
@@ -17,5 +15,15 @@ protected:
 public:
 	ActorFactory();
 
-	StrongActorPtr CreateActor(const char* actorResource, XMLDocument* overrides);
+	StrongActorPtr CreateActor(const char* actorResource);
+
+	//virtual StrongActorComponentPtr VCreateComponent(tinyxml2::XMLElement* data);
+
+	
+private:
+	ActorId GetNextActorId()
+	{
+		lastActorId++;
+		return lastActorId;
+	}
 };

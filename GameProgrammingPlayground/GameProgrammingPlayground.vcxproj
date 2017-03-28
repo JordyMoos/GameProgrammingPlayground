@@ -84,6 +84,7 @@
     </Xml>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Engine\Public\Debugging\Logger.h" />
     <ClInclude Include="Engine\Public\Actors\AbstractActorComponent.h" />
     <ClInclude Include="Engine\Public\Actors\Actor.h" />
     <ClInclude Include="Engine\Public\Actors\ActorFactory.h" />

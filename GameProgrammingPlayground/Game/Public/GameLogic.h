@@ -10,9 +10,12 @@ class GameLogic
 private:
 	std::list<StrongActorPtr> actors;
 
+
 public:
-
 	bool Init();
-
 	void Update(int deltaMs);
+
+
+private:
+	StrongActorPtr loadActor(const char* filename);
 };

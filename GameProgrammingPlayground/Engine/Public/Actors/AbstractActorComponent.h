@@ -7,12 +7,6 @@
 #include "ActorFactory.h"
 
 
-class AbstractActorComponent;
-
-
-const ComponentId INVALID_COMPONENT_ID = 0;
-
-
 class AbstractActorComponent
 {
 private:
