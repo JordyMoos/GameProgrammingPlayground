@@ -11,9 +11,9 @@ ActorFactory::ActorFactory()
 
 StrongActorPtr ActorFactory::CreateActor(const char* actorResource)
 {
-	tinyxml2::XMLDocument* root = nullptr;
-	root->LoadFile(actorResource);
-	if (root == nullptr)
+	tinyxml2::XMLDocument doc;
+	auto error = doc.LoadFile(actorResource);
+	if (error != 0)
 	{
 		GAME_ERROR("Failed to create actor from resource: " + std::string(actorResource));
 		return StrongActorPtr();
@@ -28,7 +28,13 @@ StrongActorPtr ActorFactory::CreateActor(const char* actorResource)
 	}
 
 	// Add components
-
+	auto root = doc.FirstChildElement();
+	GAME_INFO(root->Name());
+	
+	for (auto element = root->FirstChildElement(); element != nullptr; element = element->NextSiblingElement())
+	{
+		GAME_INFO(element->Name());
+	}
 
 
 

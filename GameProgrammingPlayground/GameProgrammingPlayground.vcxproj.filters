@@ -6,6 +6,7 @@
     <ClCompile Include="Engine\Private\Actors\Actor.cpp" />
     <ClCompile Include="Engine\Private\Actors\ActorFactory.cpp" />
     <ClCompile Include="Game\Private\GameLogic.cpp" />
+    <ClCompile Include="Engine\Private\Actors\TransformComonent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="Game\Resources\Ball.xml" />

@@ -74,6 +74,7 @@
   <ItemGroup>
     <ClCompile Include="Engine\Private\Actors\Actor.cpp" />
     <ClCompile Include="Engine\Private\Actors\ActorFactory.cpp" />
+    <ClCompile Include="Engine\Private\Actors\TransformComonent.cpp" />
     <ClCompile Include="Engine\ThirdParty\tinyxml2.cpp" />
     <ClCompile Include="Game\Private\GameLogic.cpp" />
     <ClCompile Include="Main.cpp" />

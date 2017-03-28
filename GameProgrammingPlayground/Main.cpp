@@ -14,11 +14,19 @@ int main(int argc, char* args[])
 {
 	printf("Hello world!\n");
 
+	/*
 	GameLogic game = GameLogic();
 	game.Init();  
 	game.Update(16);
 	game.Update(16);
 	game.Update(16);
+	*/
+
+	ActorFactory actorFactory = ActorFactory();
+	actorFactory.CreateActor(".\\Game\\Resources\\Ball.xml");
+	
+
+
 
 	return 0;
 }
