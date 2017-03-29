@@ -1,11 +1,20 @@
 #include "../../Public/Actors/ActorFactory.h"
 #include "../../Public/Actors/Actor.h"
+#include "../../Public/Actors/TransformComponent.h"
 #include "../../Public/Debugging/Logger.h"
 
 
 ActorFactory::ActorFactory()
 {
 	lastActorId = INVALID_ACTOR_ID;
+}
+
+
+bool ActorFactory::VInit()
+{
+	componentMap["TransformComponent"] = std::function<TransformComponent*()>([](){ return new TransformComponent(); });
+
+	return true;
 }
 
 
