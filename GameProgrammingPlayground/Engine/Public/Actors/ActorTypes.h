@@ -18,7 +18,7 @@ typedef std::shared_ptr<AbstractActorComponent> StrongActorComponentPtr;
 typedef std::weak_ptr<AbstractActorComponent> WeakActorComponentPtr;
 
 
-typedef std::unordered_map<ComponentId, void()
+//typedef std::unordered_map<ComponentId, void()
 
 
 const ActorId INVALID_ACTOR_ID = 0;
