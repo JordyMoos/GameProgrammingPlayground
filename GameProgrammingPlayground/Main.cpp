@@ -23,6 +23,7 @@ int main(int argc, char* args[])
 	*/
 
 	ActorFactory actorFactory = ActorFactory();
+	actorFactory.VInit();
 	actorFactory.CreateActor(".\\Game\\Resources\\Ball.xml");
 	
 

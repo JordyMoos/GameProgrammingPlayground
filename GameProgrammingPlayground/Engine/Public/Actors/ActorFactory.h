@@ -10,7 +10,10 @@
 class ActorFactory
 {
 private:
-	std::unordered_map<std::string, std::function<AbstractActorComponent*()>> componentMap;
+	typedef std::unordered_map<std::string, std::function<AbstractActorComponent*()>> ComponentFunctionMap;
+
+private:
+	ComponentFunctionMap componentMap;
 	ActorId lastActorId;
 
 protected:
@@ -23,7 +26,7 @@ public:
 
 	StrongActorPtr CreateActor(const char* actorResource);
 
-	//virtual StrongActorComponentPtr VCreateComponent(tinyxml2::XMLElement* data);
+	StrongActorComponentPtr CreateComponent(tinyxml2::XMLElement* element);
 
 	
 private:
