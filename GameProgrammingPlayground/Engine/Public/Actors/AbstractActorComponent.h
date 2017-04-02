@@ -21,13 +21,13 @@ public:
 		owner.reset();
 	}
 
-
 	virtual bool VInit(tinyxml2::XMLDocument *data) = 0;
 	virtual void VPostInit() { }
 	virtual void VUpdate(int deltaMs) { }
 	// Used for actor modification via xml
 	//virtual void VOnChange() { }
 
+	virtual ComponentId VGetId() const = 0;
 	virtual const char* VGetName() const = 0;
 
 private:

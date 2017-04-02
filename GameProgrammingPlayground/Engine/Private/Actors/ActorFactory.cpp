@@ -49,9 +49,10 @@ StrongActorPtr ActorFactory::CreateActor(const char* actorResource)
 
 		GAME_INFO("New component:\n");
 		GAME_LOG(component->VGetName());
+
+		actor->AddComponent(component);
+		component->SetOwner(actor);
 	}
-
-
 
 	actor->PostInit();
 

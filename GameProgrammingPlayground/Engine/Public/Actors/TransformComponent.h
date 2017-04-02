@@ -7,6 +7,7 @@ class TransformComponent : public AbstractActorComponent
 {
 public:
 	static const char* name;
+	static const ComponentId componentId;
 
 private:
 	float x, y, z;
@@ -19,6 +20,11 @@ public:
 	virtual const char* VGetName() const override
 	{
 		return name;
+	}
+
+	virtual ComponentId VGetId() const override
+	{
+		return componentId;
 	}
 
 	float getX() const
@@ -35,5 +41,4 @@ public:
 	{
 		return z;
 	}
-
 };

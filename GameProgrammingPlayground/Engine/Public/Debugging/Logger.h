@@ -44,3 +44,14 @@
 	while (0) \
 
 
+#define GAME_ASSERT(expr) \
+	do \
+	{ \
+		if (!(expr)) \
+		{ \
+			GAME_FATAL(#expr); \
+		} \
+	} \
+	while (0) 
+
+
