@@ -83,6 +83,7 @@
     <Xml Include="Game\Resources\Ball.xml">
       <SubType>Designer</SubType>
     </Xml>
+    <Xml Include="Game\Resources\Wall.xml" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Public\Debugging\Logger.h" />
@@ -93,9 +94,6 @@
     <ClInclude Include="Engine\Public\Actors\TransformComponent.h" />
     <ClInclude Include="Engine\ThirdParty\tinyxml2.h" />
     <ClInclude Include="Game\Public\GameLogic.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Game\Resources\Ball.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

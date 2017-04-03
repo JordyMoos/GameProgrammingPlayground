@@ -1,5 +1,5 @@
 <Actor type="Ball">
   <TransformComponent>
-    <Position x="100" y="200" z="10" />
+    <Position x="200" y="300" z="0" />
   </TransformComponent>
 </Actor>
