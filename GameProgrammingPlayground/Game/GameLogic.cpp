@@ -1,9 +1,9 @@
 
 #include <stdio.h>
 
-#include "../../Engine/ThirdParty/tinyxml2.h"
-#include "../Public/GameLogic.h"
-#include "../../Engine/Public/Actors/ActorFactory.h"
+#include "../Engine/ThirdParty/tinyxml2.h"
+#include "GameLogic.h"
+#include "../Engine/Actors/ActorFactory.h"
 
 bool GameLogic::Init()
 {

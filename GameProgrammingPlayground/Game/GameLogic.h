@@ -1,8 +1,8 @@
 #pragma once
 
 #include <list>
-#include "../../Engine/Public/Actors/Actor.h"
-#include "../../Engine/Public/Actors/ActorTypes.h"
+#include "../Engine/Actors/Actor.h"
+#include "../Engine/Actors/ActorTypes.h"
 
 
 class GameLogic

@@ -1,4 +1,4 @@
-#include "../../Public/Actors/Actor.h"
+#include "Actor.h"
 
 
 bool Actor::Init(tinyxml2::XMLElement* data)

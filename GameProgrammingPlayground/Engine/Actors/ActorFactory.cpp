@@ -1,7 +1,7 @@
-#include "../../Public/Actors/ActorFactory.h"
-#include "../../Public/Actors/Actor.h"
-#include "../../Public/Actors/TransformComponent.h"
-#include "../../Public/Debugging/Logger.h"
+#include "ActorFactory.h"
+#include "Actor.h"
+#include "TransformComponent.h"
+#include "../Debugging/Logger.h"
 
 
 ActorFactory::ActorFactory()

@@ -1,5 +1,5 @@
-#include "../../Public/Actors/TransformComponent.h"
-#include "../../Public/Debugging/Logger.h"
+#include "TransformComponent.h"
+#include "../Debugging/Logger.h"
 
 
 const char* TransformComponent::name = "TransformComponent";

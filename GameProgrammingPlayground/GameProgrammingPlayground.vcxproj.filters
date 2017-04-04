@@ -3,10 +3,10 @@
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Engine\ThirdParty\tinyxml2.cpp" />
-    <ClCompile Include="Engine\Private\Actors\Actor.cpp" />
-    <ClCompile Include="Engine\Private\Actors\ActorFactory.cpp" />
-    <ClCompile Include="Game\Private\GameLogic.cpp" />
-    <ClCompile Include="Engine\Private\Actors\TransformComponent.cpp" />
+    <ClCompile Include="Engine\Actors\Actor.cpp" />
+    <ClCompile Include="Engine\Actors\ActorFactory.cpp" />
+    <ClCompile Include="Engine\Actors\TransformComponent.cpp" />
+    <ClCompile Include="Game\GameLogic.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="Game\Resources\Ball.xml" />
@@ -14,12 +14,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\ThirdParty\tinyxml2.h" />
-    <ClInclude Include="Engine\Public\Actors\Actor.h" />
-    <ClInclude Include="Engine\Public\Actors\ActorFactory.h" />
-    <ClInclude Include="Engine\Public\Actors\AbstractActorComponent.h" />
-    <ClInclude Include="Engine\Public\Actors\ActorTypes.h" />
-    <ClInclude Include="Game\Public\GameLogic.h" />
-    <ClInclude Include="Engine\Public\Actors\TransformComponent.h" />
-    <ClInclude Include="Engine\Public\Debugging\Logger.h" />
+    <ClInclude Include="Engine\Actors\AbstractActorComponent.h" />
+    <ClInclude Include="Engine\Actors\Actor.h" />
+    <ClInclude Include="Engine\Actors\ActorFactory.h" />
+    <ClInclude Include="Engine\Actors\ActorTypes.h" />
+    <ClInclude Include="Engine\Actors\TransformComponent.h" />
+    <ClInclude Include="Engine\Debugging\Logger.h" />
+    <ClInclude Include="Engine\EventManager\IEventManager.h" />
+    <ClInclude Include="Game\GameLogic.h" />
   </ItemGroup>
 </Project>
