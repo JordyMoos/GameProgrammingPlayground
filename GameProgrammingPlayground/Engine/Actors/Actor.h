@@ -54,7 +54,7 @@ public:
 		}
 
 		StrongActorComponentPtr base(findIt->second);
-		std::shared_ptr<ComponentType> sub(static_pointer_cast<ComponentType>(base));
+		std::shared_ptr<ComponentType> sub(std::static_pointer_cast<ComponentType>(base));
 		std::weak_ptr<ComponentType> weakSub(sub);
 
 		return weakSub;
