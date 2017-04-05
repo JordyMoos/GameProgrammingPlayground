@@ -8,6 +8,7 @@
     <ClCompile Include="Game\GameLogic.cpp" />
     <ClCompile Include="Engine\EventManager\EventManager.cpp" />
     <ClCompile Include="Engine\ThirdParty\tinyxml2\tinyxml2.cpp" />
+    <ClCompile Include="Engine\EventManager\Events.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="Game\Resources\Ball.xml" />
@@ -26,5 +27,6 @@
     <ClInclude Include="Engine\ThirdParty\tinyxml2\tinyxml2.h" />
     <ClInclude Include="Engine\ThirdParty\FastDelegate\FastDelegate.h" />
     <ClInclude Include="Engine\ThirdParty\FastDelegate\FastDelegateBind.h" />
+    <ClInclude Include="Engine\EventManager\Events.h" />
   </ItemGroup>
 </Project>
