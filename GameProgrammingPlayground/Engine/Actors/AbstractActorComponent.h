@@ -1,7 +1,7 @@
 #pragma once
 
 #include <memory>
-#include "../ThirdParty/tinyxml2.h"
+#include "../ThirdParty/tinyxml2/tinyxml2.h"
 #include "ActorTypes.h"
 #include "Actor.h"
 #include "ActorFactory.h"

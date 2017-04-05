@@ -1,7 +1,7 @@
 
 #include <stdio.h>
 
-#include "../Engine/ThirdParty/tinyxml2.h"
+#include "../Engine/ThirdParty/tinyxml2/tinyxml2.h"
 #include "GameLogic.h"
 #include "../Engine/Actors/ActorFactory.h"
 

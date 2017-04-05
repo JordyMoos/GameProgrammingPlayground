@@ -3,7 +3,7 @@
 #include <map>
 #include <memory>
 
-#include "../ThirdParty/tinyxml2.h"
+#include "../ThirdParty/tinyxml2/tinyxml2.h"
 #include "../Debugging/Logger.h"
 #include "ActorTypes.h"
 #include "AbstractActorComponent.h"

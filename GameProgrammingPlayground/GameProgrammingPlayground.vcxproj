@@ -75,7 +75,8 @@
     <ClCompile Include="Engine\Actors\Actor.cpp" />
     <ClCompile Include="Engine\Actors\ActorFactory.cpp" />
     <ClCompile Include="Engine\Actors\TransformComponent.cpp" />
-    <ClCompile Include="Engine\ThirdParty\tinyxml2.cpp" />
+    <ClCompile Include="Engine\EventManager\EventManager.cpp" />
+    <ClCompile Include="Engine\ThirdParty\tinyxml2\tinyxml2.cpp" />
     <ClCompile Include="Game\GameLogic.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
@@ -92,8 +93,11 @@
     <ClInclude Include="Engine\Actors\ActorFactory.h" />
     <ClInclude Include="Engine\Actors\ActorTypes.h" />
     <ClInclude Include="Engine\Actors\TransformComponent.h" />
+    <ClInclude Include="Engine\EventManager\EventManager.h" />
     <ClInclude Include="Engine\EventManager\IEventManager.h" />
-    <ClInclude Include="Engine\ThirdParty\tinyxml2.h" />
+    <ClInclude Include="Engine\ThirdParty\FastDelegate\FastDelegate.h" />
+    <ClInclude Include="Engine\ThirdParty\FastDelegate\FastDelegateBind.h" />
+    <ClInclude Include="Engine\ThirdParty\tinyxml2\tinyxml2.h" />
     <ClInclude Include="Game\GameLogic.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
