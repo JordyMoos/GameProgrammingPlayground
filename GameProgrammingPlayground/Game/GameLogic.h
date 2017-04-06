@@ -13,9 +13,12 @@ private:
 
 public:
 	bool Init();
+
+	bool LoadLevel(const char* filename);
+
 	void Update(int deltaMs);
 
 
 private:
-	StrongActorPtr loadActor(const char* filename);
+	StrongActorPtr LoadActor(const char* filename);
 };

@@ -1,5 +1,5 @@
 <Actor type="Wall">
   <TransformComponent>
-    <Position x="100" y="300" z="0" />
+    <Position x="0" y="0" z="0" />
   </TransformComponent>
 </Actor>

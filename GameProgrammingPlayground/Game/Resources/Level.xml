@@ -1,0 +1,15 @@
+<World>
+  <StaticActors>
+    <Actor resource="./Game/Resources/Ball.xml">
+      <TransformComponent>
+        <Position x="100" y="100" z="100" />
+      </TransformComponent>
+    </Actor>
+    <Actor resource="./Game/Resources/Ball.xml">
+      <TransformComponent>
+        <Position x="200" y="200" z="200" />
+      </TransformComponent>
+    </Actor>
+    <Actor resource="./Game/Resources/Ball.xml" />
+  </StaticActors>
+</World>

@@ -1,6 +1,5 @@
 
-#include <stdio.h>
-
+#include "../Engine/Debugging/Logger.h"
 #include "../Engine/ThirdParty/tinyxml2/tinyxml2.h"
 #include "GameLogic.h"
 #include "../Engine/Actors/ActorFactory.h"
@@ -8,12 +7,25 @@
 bool GameLogic::Init()
 {
 	StrongActorPtr actor = nullptr;
-	actor = loadActor(".\\Game\\Resources\\Ball.xml");
+	actor = LoadActor(".\\Game\\Resources\\Ball.xml");
 	if (actor == nullptr)
 	{
 		return false;
 	}
 	actors.push_back(actor);
+
+	return true;
+}
+
+
+bool GameLogic::LoadLevel(const char* filename)
+{
+	tinyxml2::XMLDocument doc;
+	auto loaded = doc.LoadFile(filename);
+	if (loaded != 0)
+	{
+		
+	}
 
 	return true;
 }
@@ -28,22 +40,22 @@ void GameLogic::Update(int deltaMs)
 }
 
 
-StrongActorPtr GameLogic::loadActor(const char* filename)
+StrongActorPtr GameLogic::LoadActor(const char* filename)
 {
 	tinyxml2::XMLDocument doc;
 	auto result = doc.LoadFile(filename);
 	if (result != 0)
 	{
-		printf("Error while loading xml\n");
+		GAME_ERROR("Error while loading xml");
 		return StrongActorPtr();
 	}
 
 	auto root = doc.FirstChildElement();
-	printf("%s\n", root->Name());
+	GAME_LOG(root->Name());
 
 	for (auto element = root->FirstChildElement(); element != nullptr; element = element->NextSiblingElement())
 	{
-		printf("\t%s\n", element->Name());
+		GAME_LOG(element->Name());
 	}
 
 	return StrongActorPtr();

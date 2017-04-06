@@ -13,6 +13,7 @@
   <ItemGroup>
     <Xml Include="Game\Resources\Ball.xml" />
     <Xml Include="Game\Resources\Wall.xml" />
+    <Xml Include="Game\Resources\Level.xml" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Actors\AbstractActorComponent.h" />
