@@ -85,7 +85,9 @@
     <Xml Include="Game\Resources\Ball.xml">
       <SubType>Designer</SubType>
     </Xml>
-    <Xml Include="Game\Resources\Level.xml" />
+    <Xml Include="Game\Resources\Level.xml">
+      <SubType>Designer</SubType>
+    </Xml>
     <Xml Include="Game\Resources\Wall.xml" />
   </ItemGroup>
   <ItemGroup>

@@ -33,14 +33,16 @@ int main(int argc, char* args[])
 	eventManager->VAddListener(fastdelegate::MakeDelegate(printer, &Printer::print), EvtData_New_Actor::eventType);
 	std::shared_ptr<EvtData_New_Actor> event(new EvtData_New_Actor(1));
 	eventManager->VQueueEvent(event);
+	eventManager->VUpdate();
 
-	ActorFactory actorFactory = ActorFactory();
-	actorFactory.VInit();
-	actorFactory.CreateActor("./Game/Resources/Ball.xml");
+	std::shared_ptr<ActorFactory> actorFactory(new ActorFactory());
+	actorFactory->VInit();
+	actorFactory->CreateActor("./Game/Resources/Ball.xml");
 
-	GameLogic* game = new GameLogic();
+	GameLogic* game = new GameLogic(actorFactory);
 	game->Init();
 	game->LoadLevel("./Game/Resources/Level.xml");
+
 	game->Update(16);
 	game->Update(16);
 	game->Update(16);

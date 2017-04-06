@@ -8,10 +8,17 @@
 class GameLogic
 {
 private:
+	std::shared_ptr<ActorFactory> actorFactory;
 	std::list<StrongActorPtr> actors;
 
 
 public:
+	GameLogic(std::shared_ptr<ActorFactory> actorFactory)
+		: actorFactory(actorFactory)
+	{
+
+	}
+
 	bool Init();
 
 	bool LoadLevel(const char* filename);
