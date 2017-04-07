@@ -1,6 +1,7 @@
 #include "ActorFactory.h"
 #include "Actor.h"
 #include "TransformComponent.h"
+#include "../Utils/Utils.h"
 #include "../Debugging/Logger.h"
 
 
@@ -75,7 +76,8 @@ bool ActorFactory::ModifyActor(StrongActorPtr actor, tinyxml2::XMLElement* overr
 	for (auto element = overrides->FirstChildElement(); element != nullptr; element = element->NextSiblingElement())
 	{
 		GAME_LOG("Update: " + std::string(element->Name()));
-		//ComonentId componentId = actor->GetComponentId(element->Name());
+		auto bier = actor->GetComponentByName(element->Name());
+		StrongActorComponentPtr component = MakeStrongPtr();
 	}
 
 	return true;

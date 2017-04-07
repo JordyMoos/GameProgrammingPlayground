@@ -65,8 +65,9 @@ public:
 		return weakSub;
 	}
 
+
 	template <class ComponentType>
-	std::weak_ptr<ComponentType> GetComponent(const char* componentName)
+	std::weak_ptr<ComponentType> GetComponentByName(const char* componentName)
 	{
 		for (auto it = components.begin(); it != components.end(); it++)
 		{

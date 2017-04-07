@@ -103,6 +103,7 @@
     <ClInclude Include="Engine\ThirdParty\FastDelegate\FastDelegate.h" />
     <ClInclude Include="Engine\ThirdParty\FastDelegate\FastDelegateBind.h" />
     <ClInclude Include="Engine\ThirdParty\tinyxml2\tinyxml2.h" />
+    <ClInclude Include="Engine\Utils\Utils.h" />
     <ClInclude Include="Game\GameLogic.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
