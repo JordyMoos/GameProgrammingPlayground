@@ -76,8 +76,20 @@ bool ActorFactory::ModifyActor(StrongActorPtr actor, tinyxml2::XMLElement* overr
 	for (auto element = overrides->FirstChildElement(); element != nullptr; element = element->NextSiblingElement())
 	{
 		GAME_LOG("Update: " + std::string(element->Name()));
-		auto bier = actor->GetComponentByName(element->Name());
-		StrongActorComponentPtr component = MakeStrongPtr();
+		StrongActorComponentPtr component = MakeStrongPtr(
+			actor->GetComponent<AbstractActorComponent>(element->Name())
+		);
+
+		if (component == nullptr)
+		{
+			// Maybe we should be able to add components?
+			// Or fully replace base components with other sub components?
+			GAME_ERROR("Actor does not have a " + std::string(element->Name()));
+			return false;
+		}
+		
+		// Override the component here
+		
 	}
 
 	return true;
