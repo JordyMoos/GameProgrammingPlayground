@@ -31,20 +31,25 @@ int main(int argc, char* args[])
 
 	std::shared_ptr<EventManager> eventManager(new EventManager());
 	eventManager->VAddListener(fastdelegate::MakeDelegate(printer, &Printer::print), EvtData_New_Actor::eventType);
-	std::shared_ptr<EvtData_New_Actor> event(new EvtData_New_Actor(1));
-	eventManager->VQueueEvent(event);
-	eventManager->VUpdate();
 
 	std::shared_ptr<ActorFactory> actorFactory(new ActorFactory());
 	actorFactory->VInit();
-	actorFactory->CreateActor("./Game/Resources/Ball.xml");
 
-	GameLogic* game = new GameLogic(actorFactory);
+	GAME_LOGGING("");
+	GameLogic* game = new GameLogic(eventManager, actorFactory);
 	game->Init();
 	game->LoadLevel("./Game/Resources/Level.xml");
 
+	GAME_LOGGING("");
+	eventManager->VUpdate();
 	game->Update(16);
+
+	GAME_LOGGING("");
+	eventManager->VUpdate();
 	game->Update(16);
+
+	GAME_LOGGING("");
+	eventManager->VUpdate();
 	game->Update(16);
 
 	delete game;

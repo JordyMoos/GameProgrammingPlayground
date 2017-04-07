@@ -1,30 +1,53 @@
 
+#include "GameLogic.h"
 #include "../Engine/Debugging/Logger.h"
 #include "../Engine/ThirdParty/tinyxml2/tinyxml2.h"
-#include "GameLogic.h"
 #include "../Engine/Actors/ActorFactory.h"
+#include "../Engine/EventManager/Events.h"
 
 bool GameLogic::Init()
 {
-	StrongActorPtr actor = nullptr;
-	actor = LoadActor(".\\Game\\Resources\\Ball.xml");
-	if (actor == nullptr)
-	{
-		return false;
-	}
-	actors.push_back(actor);
-
 	return true;
 }
 
 
-bool GameLogic::LoadLevel(const char* filename)
+bool GameLogic::LoadLevel(const char* levelResource)
 {
 	tinyxml2::XMLDocument doc;
-	auto loaded = doc.LoadFile(filename);
-	if (loaded != 0)
+	auto error = doc.LoadFile(levelResource);
+	if (error != 0)
 	{
-		
+		GAME_ERROR("Failed to load level from resource: " + std::string(levelResource));
+		return false;
+	}
+
+	auto root = doc.FirstChildElement();
+	auto staticActorElement = root->FirstChildElement("StaticActors");
+	for (auto actorElement = staticActorElement->FirstChildElement();
+		actorElement != nullptr;
+		actorElement = actorElement->NextSiblingElement())
+	{
+		GAME_LOGGING("\n");
+		auto actorResource = actorElement->Attribute("resource");
+		if (actorResource == nullptr)
+		{
+			GAME_ERROR("Actor does not have a resource");
+			return false;
+		}
+
+		GAME_INFO("Child: " + std::string(actorElement->Name()) + " with resource: " + std::string(actorResource));
+		auto actor = actorFactory->CreateActor(actorResource, actorElement);
+		if (actor == nullptr)
+		{
+			GAME_ERROR("Could not create actor from resource: " + std::string(actorResource));
+			return false;
+		}
+
+		GAME_INFO("Actor created!");
+		actors.push_back(actor);
+
+		std::shared_ptr<EvtData_New_Actor> event(new EvtData_New_Actor(actor->GetId()));
+		eventManager->VQueueEvent(event);
 	}
 
 	return true;
@@ -39,24 +62,3 @@ void GameLogic::Update(int deltaMs)
 	}
 }
 
-
-StrongActorPtr GameLogic::LoadActor(const char* filename)
-{
-	tinyxml2::XMLDocument doc;
-	auto result = doc.LoadFile(filename);
-	if (result != 0)
-	{
-		GAME_ERROR("Error while loading xml");
-		return StrongActorPtr();
-	}
-
-	auto root = doc.FirstChildElement();
-	GAME_LOG(root->Name());
-
-	for (auto element = root->FirstChildElement(); element != nullptr; element = element->NextSiblingElement())
-	{
-		GAME_LOG(element->Name());
-	}
-
-	return StrongActorPtr();
-}

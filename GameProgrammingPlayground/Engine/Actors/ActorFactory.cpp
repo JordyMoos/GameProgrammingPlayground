@@ -18,7 +18,7 @@ bool ActorFactory::VInit()
 }
 
 
-StrongActorPtr ActorFactory::CreateActor(const char* actorResource)
+StrongActorPtr ActorFactory::CreateActor(const char* actorResource, tinyxml2::XMLElement* overrides)
 {
 	tinyxml2::XMLDocument doc;
 	auto error = doc.LoadFile(actorResource);
@@ -47,16 +47,38 @@ StrongActorPtr ActorFactory::CreateActor(const char* actorResource)
 			return StrongActorPtr();
 		}
 
-		GAME_INFO("New component:\n");
+		GAME_INFO("New component:");
 		GAME_LOG(component->VGetName());
 
 		actor->AddComponent(component);
 		component->SetOwner(actor);
 	}
 
+	if (overrides)
+	{
+		bool result = ModifyActor(actor, overrides);
+		if (!result)
+		{
+			GAME_ERROR("Could not modify the actor");
+			return StrongActorPtr();
+		}
+	}
+
 	actor->PostInit();
 
 	return actor;
+}
+
+
+bool ActorFactory::ModifyActor(StrongActorPtr actor, tinyxml2::XMLElement* overrides)
+{
+	for (auto element = overrides->FirstChildElement(); element != nullptr; element = element->NextSiblingElement())
+	{
+		GAME_LOG("Update: " + std::string(element->Name()));
+		//ComonentId componentId = actor->GetComponentId(element->Name());
+	}
+
+	return true;
 }
 
 

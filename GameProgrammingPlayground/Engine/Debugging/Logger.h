@@ -4,6 +4,14 @@
 #include <string>
 
 
+#define GAME_LOGGING(str) \
+	do \
+	{ \
+		printf("%s\n", std::string(str).c_str()); \
+	} \
+	while (0) \
+
+
 #define GAME_LOG(str) \
 	do \
 	{ \

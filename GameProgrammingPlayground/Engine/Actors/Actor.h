@@ -42,6 +42,11 @@ public:
 	void Destroy();
 	void Update(int deltaMs);
 
+	ActorId GetId() const
+	{
+		return id;
+	}
+
 	void AddComponent(StrongActorComponentPtr comonent);
 
 	template <class ComponentType>

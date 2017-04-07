@@ -24,7 +24,9 @@ public:
 
 	virtual bool VInit();
 
-	StrongActorPtr CreateActor(const char* actorResource);
+	StrongActorPtr CreateActor(const char* actorResource, tinyxml2::XMLElement* overrides);
+
+	bool ModifyActor(StrongActorPtr actor, tinyxml2::XMLElement* overrides);
 
 	StrongActorComponentPtr CreateComponent(tinyxml2::XMLElement* element);
 
