@@ -65,6 +65,24 @@ public:
 		return weakSub;
 	}
 
+	template <class ComponentType>
+	std::weak_ptr<ComponentType> GetComponent(const char* componentName)
+	{
+		for (auto it = components.begin(); it != components.end(); it++)
+		{
+			if ((*it)->VGetName() == componentName)
+			{
+				StrongActorComponentPtr base(findIt->second);
+				std::shared_ptr<ComponentType> sub(std::static_pointer_cast<ComponentType>(base));
+				std::weak_ptr<ComponentType> weakSub(sub);
+
+				return weakSub;
+			}
+		}
+
+		return std::weak_ptr<ComponentType>();
+	}
+
 private:
 	Actor() {};
 };
