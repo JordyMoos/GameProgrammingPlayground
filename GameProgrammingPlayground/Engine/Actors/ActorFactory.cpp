@@ -53,6 +53,8 @@ StrongActorPtr ActorFactory::CreateActor(const char* actorResource, tinyxml2::XM
 
 		actor->AddComponent(component);
 		component->SetOwner(actor);
+
+		component->VInit(element);
 	}
 
 	if (overrides)
@@ -89,7 +91,7 @@ bool ActorFactory::ModifyActor(StrongActorPtr actor, tinyxml2::XMLElement* overr
 		}
 
 		// Override the component here
-
+		component->VInit(overrides->FirstChildElement());
 	}
 
 	return true;

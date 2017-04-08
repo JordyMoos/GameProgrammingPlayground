@@ -27,6 +27,8 @@ public:
 		return componentId;
 	}
 
+	virtual void VUpdate(int deltaMs) override;
+
 	float getX() const
 	{
 		return x;
