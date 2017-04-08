@@ -2,6 +2,7 @@
 
 #include <map>
 #include <memory>
+#include <cstring>
 
 #include "../ThirdParty/tinyxml2/tinyxml2.h"
 #include "../Debugging/Logger.h"
@@ -71,10 +72,10 @@ public:
 	{
 		for (auto it = components.begin(); it != components.end(); it++)
 		{
-            StrongActorComponentPtr base(it->second);
-            std::shared_ptr<ComponentType> sub(std::static_pointer_cast<ComponentType>(base));
+			StrongActorComponentPtr base(it->second);
+			std::shared_ptr<ComponentType> sub(std::static_pointer_cast<ComponentType>(base));
 
-			if (sub->VGetName() == componentName)
+			if (strcmp(sub->VGetName(), componentName) == 0)
 			{
 				std::weak_ptr<ComponentType> weakSub(sub);
 

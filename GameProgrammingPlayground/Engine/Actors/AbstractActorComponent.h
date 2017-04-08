@@ -21,7 +21,7 @@ public:
 		owner.reset();
 	}
 
-	virtual bool VInit(tinyxml2::XMLDocument *data) = 0;
+	virtual bool VInit(tinyxml2::XMLElement *data) = 0;
 	virtual void VPostInit() { }
 	virtual void VUpdate(int deltaMs) { }
 	// Used for actor modification via xml

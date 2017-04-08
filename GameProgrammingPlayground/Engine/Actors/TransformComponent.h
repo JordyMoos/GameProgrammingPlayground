@@ -15,7 +15,7 @@ private:
 public:
 	TransformComponent() : x(0), y(0), z(0) { }
 
-	virtual bool VInit(tinyxml2::XMLDocument *data) override;
+	virtual bool VInit(tinyxml2::XMLElement *data) override;
 
 	virtual const char* VGetName() const override
 	{

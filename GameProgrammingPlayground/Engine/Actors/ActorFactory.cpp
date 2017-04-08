@@ -78,7 +78,7 @@ bool ActorFactory::ModifyActor(StrongActorPtr actor, tinyxml2::XMLElement* overr
 		GAME_LOG("Update: " + std::string(element->Name()));
 		StrongActorComponentPtr component = MakeStrongPtr(
 			actor->GetComponent<AbstractActorComponent>(element->Name())
-		);
+			);
 
 		if (component == nullptr)
 		{
@@ -87,9 +87,9 @@ bool ActorFactory::ModifyActor(StrongActorPtr actor, tinyxml2::XMLElement* overr
 			GAME_ERROR("Actor does not have a " + std::string(element->Name()));
 			return false;
 		}
-		
+
 		// Override the component here
-		
+
 	}
 
 	return true;
